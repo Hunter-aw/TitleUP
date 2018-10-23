@@ -1,19 +1,18 @@
 // const rp = require('request-promise');
 const puppeteer = require('puppeteer')
-const $ = require('cheerio');
-const url = 'https://topmediumstories.com/';
+// const $ = require('cheerio');
 
-const scrape = async () => {
+const scrape = async (url) => {
     const browser = await puppeteer.launch({headless: false});
     const page = await browser.newPage();
 
     await page.goto(url);
-    await page.waitFor(5000)
+    await page.waitFor(6000)
     // for (let i=0; i <5; i++){
     //     let year = 2018
     //     await page.addScriptTag(`#${year - i}-load`);
-    for (let i=0; i <10; i++) {
-        await page.click('.load-more', {delay: 1000});
+    for (let i=0; i <8; i++) {
+        await page.click('.load-more', {delay: 5000});
     }
     // }
 
@@ -34,7 +33,9 @@ const scrape = async () => {
     return result
 }
 
-scrape().then((value) => {
-    console.log(value);
-})
+module.exports = scrape
+
+// scrape().then((value) => {
+//     console.log(value);
+// })
 
