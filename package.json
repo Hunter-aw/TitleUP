@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "brain.js": "^1.4.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
     "mongoose": "^5.3.5",
+    "natural": "^0.6.1",
+    "natural-brain": "^0.3.2",
     "numeral": "^2.0.6",
     "puppeteer": "^1.9.0",
     "react": "^16.5.2",
