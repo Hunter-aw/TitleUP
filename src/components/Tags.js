@@ -5,7 +5,7 @@ class Tags extends Component {
         return(
             <div>
                 {this.props.tags.map((tag, index) => 
-                    <div className='tag'>{tag}</div>
+                    <div className='tag'>#{tag}</div>
                 )}
             </div>
         )

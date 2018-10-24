@@ -20,7 +20,7 @@ const mediumScrapper = (url) => {
                 claps: claps,
                 tags: tags
             }
-            // console.log(data)
+            console.log(data)
             if (data.claps === 0) return null
             else return data
         })
