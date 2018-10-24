@@ -1,14 +1,30 @@
+const express = require('express')
 const natural = require('natural')
 // const brain = require('brain.js')
 // var BrainJSClassifier = require('natural-brain');
 // var classifier = new BrainJSClassifier();
-const classifier = new natural.BayesClassifier();
+const router = express.Router()
+// const classifier = new natural.BayesClassifier();
 
-const mongoose = require('mongoose');
-const Article = require ('../models/ArticleData');
+// const mongoose = require('mongoose');
+// const Article = require ('../models/ArticleData');
 
-mongoose.connect('mongodb://localhost/medium', function() {
-  console.log("DB connection established!!!");
+// mongoose.connect('mongodb://localhost/medium', function() {
+//   console.log("DB connection established!!!");
+// })
+
+router.get('/search/:query', (req, res) => {
+    console.log("I'm here bitches")
+    let tags = []
+    let query = req.params.query
+    natural.BayesClassifier.load('classifier.json', null, function(err, classifier) {
+        let classifiedTags = classifier.getClassifications(query)
+        for (let i=0; i<5; i++){
+            tags.push(classifiedTags[i].label)
+            console.log(tags)
+        }
+        res.send(tags)
+    })
 })
 
 // let str = 'Digital Exile: How I Got Banned for Life from AirBnB'
@@ -45,17 +61,19 @@ mongoose.connect('mongodb://localhost/medium', function() {
 //         })
 //     }) 
 
-natural.BayesClassifier.load('classifier.json', null, function(err, classifier) {
-    console.log(classifier.getClassifications('how to grow a dope garden')[0].label, 
-                classifier.getClassifications('how to grow a dope garden')[1].label, 
-                classifier.getClassifications('how to grow a dope garden')[2].label, 
-                classifier.getClassifications('how to grow a dope garden')[3].label, 
-                classifier.getClassifications('how to grow a dope garden')[4].label)
-})
+// natural.BayesClassifier.load('classifier.json', null, function(err, classifier) {
+//     console.log(classifier.getClassifications('how to grow a dope garden')[0].label, 
+//                 classifier.getClassifications('how to grow a dope garden')[1].label, 
+//                 classifier.getClassifications('how to grow a dope garden')[2].label, 
+//                 classifier.getClassifications('how to grow a dope garden')[3].label, 
+//                 classifier.getClassifications('how to grow a dope garden')[4].label)
+// })
             // for (let tag of data.tags) {
             //     if (obj[tag]) {
             //         obj[tag] += 1
             //     }
             //     else {obj[tag] = 1}
+
+module.exports = router
 
 

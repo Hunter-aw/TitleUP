@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.18.0",
     "brain.js": "^1.4.2",
     "cheerio": "^1.0.0-rc.2",
     "express": "^4.16.4",
