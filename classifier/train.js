@@ -10,15 +10,7 @@ mongoose.connect('mongodb://localhost/medium', function() {
 })
 
 // let str = 'Digital Exile: How I Got Banned for Life from AirBnB'
-// const tokenizer = new natural.WordPunctTokenizer()
 
-
-// let tokenized = tokenizer.tokenize(str)
-// console.log(tokenized)
-
-// for (let word of tokenized) {
-//     console.log(natural.PorterStemmer.stem(word))
-// }
 
 const obj = {}
 Article.find({})

@@ -10,7 +10,8 @@ nav {
   color: white;
   display: flex;
   justify-content: space-between;
-  height: 90px;
+  padding: 10px;
+  height: 70px;
   font-size: 40px
 }
 button{

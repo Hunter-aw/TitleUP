@@ -4,8 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.18.0",
-    "brain.js": "^1.4.2",
     "cheerio": "^1.0.0-rc.2",
+    "en-pos": "^1.0.16",
     "express": "^4.16.4",
     "mongoose": "^5.3.5",
     "natural": "^0.6.1",
