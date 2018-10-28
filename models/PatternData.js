@@ -3,7 +3,8 @@ const mongoose = require('mongoose')
 const patternSchema = new mongoose.Schema({
     tag: String,
     pos: String,
-    words: Object
+    word: String,
+    popularity: Number  
 })
 
 const Pattern = mongoose.model('pattern', patternSchema)
