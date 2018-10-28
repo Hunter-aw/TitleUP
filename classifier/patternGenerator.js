@@ -11,21 +11,32 @@ mongoose.connect('mongodb://localhost/medium', function() {
   console.log("DB connection established!!!");
 })
 
+function onInsert(err, docs) {
+    if (err) {
+        console.log(err)
+    } else { 
+        console.log('1000 potatoes were successfully stored.');
+    }
+}
+function helpMe() {
+    setTimeout(onInsert, 1000)
+}
 
 Tag.find({})
     .then((allTags) => {
         // console.log(allTags)
         let num = 0
-        let wordCount = {}
-        let wordPos = {}
-        let wordPop = {}
         for (let data of allTags) {
+            let wordCount = {}
+            let wordPos = {}
+            let wordPop = {}
             Article.find({tags: data.tag}) //mongoose arary includes
                 .then((genreData) => {
                     console.log("---------------BREAK--------------")
                     for(let article of genreData) {
                         // console.log(article)
-                        let tokenedTitle = tokenizer.tokenize(article.title)
+                        let betterTitle = article.title.replace(/[.,!]/g, '');
+                        let tokenedTitle = tokenizer.tokenize(betterTitle.toLowerCase())
                         let posTitle = new Pos(tokenedTitle).initial().smooth().tags;
                         for (let index in tokenedTitle) {
                             let word = tokenedTitle[index]
@@ -49,17 +60,20 @@ Tag.find({})
                 }
                 for (let word in wordPop) {
                     wordPop[word] = (wordPop[word]/popMax)+(wordCount[word]/wordMax)
-                    console.log(word, wordPop[word])
+                    // console.log(word, wordPop[word])
                 }
+                let wordDataArray = []
                 for (let word in wordPos) {
-                    let wordData = new Pattern ({
-                        tag: data.tag,
-                        pos: wordPos[word],
-                        word: word,
-                        popularity: wordPop[word]   
-                    })
-                    // wordData.save()
-                }
+                        let wordData = {
+                            tag: data.tag,
+                            pos: wordPos[word],
+                            word: word,
+                            popularity: wordPop[word]   
+                        }
+                        console.log('HERE')
+                        wordDataArray.push(wordData)
+                    }
+                Pattern.collection.insertMany(wordDataArray, helpMe)
             })
         }
     })
