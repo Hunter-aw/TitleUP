@@ -3,7 +3,7 @@ const natural = require('natural')
 const classifier = new natural.BayesClassifier();
 
 const mongoose = require('mongoose');
-const Article = require ('../models/ArticleData');
+const Garticle = require ('../models/ArticleData');
 
 mongoose.connect('mongodb://localhost/medium', function() {
   console.log("DB connection established!!!");
@@ -13,7 +13,7 @@ mongoose.connect('mongodb://localhost/medium', function() {
 
 
 const obj = {}
-Article.find({})
+Garticle.find({})
     .then((allData) => {
         let count = 0
         for (let data of allData) {
@@ -33,7 +33,7 @@ Article.find({})
         classifier.train();
         console.log("training classifier")
         setTimeout(() => console.log("this article is about " + classifier.classify('Why you should quit your job')), 5000)
-        classifier.save('classifier2.json', function(err, classifier){
+        classifier.save('./fullClassifier.json', function(err, classifier){
             console.log("saved classifier")
         })
     }) 

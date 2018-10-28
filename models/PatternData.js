@@ -7,6 +7,6 @@ const patternSchema = new mongoose.Schema({
     popularity: Number  
 })
 
-const Pattern = mongoose.model('pattern', patternSchema)
+const Garpattern = mongoose.model('Garpattern', patternSchema)
 
-module.exports = Pattern
+module.exports = Garpattern

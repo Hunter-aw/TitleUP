@@ -43,7 +43,7 @@ const scrape = async (url) => {
     let mediumArray = Array.from(mediumUrls)
     return mediumArray
 }
-scrape("https://topmediumstories.com/")
+// scrape("https://topmediumstories.com/")
 
 module.exports = scrape
 

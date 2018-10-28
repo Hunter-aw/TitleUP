@@ -5,6 +5,6 @@ const TagSchema = new mongoose.Schema({
     count: Number
 })
 
-const Tag = mongoose.model('tag', TagSchema)
+const Tag = mongoose.model('ttag', TagSchema)
 
 module.exports = Tag

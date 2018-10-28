@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
-const Pattern = require ('../models/PatternData');
-const Article = require('../models/ArticleData')
+const Garpattern = require ('../models/PatternData');
+const Garticle = require('../models/ArticleData')
 const Tag = require('../models/TagsData')
 const Pos = require("en-pos").Tag;
 const natural = require('natural')
@@ -30,7 +30,7 @@ Tag.find({})
             let wordCount = {}
             let wordPos = {}
             let wordPop = {}
-            Article.find({tags: data.tag}) //mongoose arary includes
+            Garticle.find({tags: data.tag}) //mongoose arary includes
                 .then((genreData) => {
                     console.log("---------------BREAK--------------")
                     for(let article of genreData) {
@@ -73,7 +73,7 @@ Tag.find({})
                         console.log('HERE')
                         wordDataArray.push(wordData)
                     }
-                Pattern.collection.insertMany(wordDataArray, helpMe)
+                Garpattern.collection.insertMany(wordDataArray, helpMe)
             })
         }
     })

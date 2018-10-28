@@ -8,6 +8,6 @@ const articleSchema = new mongoose.Schema({
     tags: Array
 })
 
-const Article = mongoose.model('barticle', articleSchema)
+const Garticle = mongoose.model('garticle', articleSchema)
 
-module.exports = Article
+module.exports = Garticle

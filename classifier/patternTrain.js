@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const Article = require ('./models/ArticleData');
+const Garticle = require ('../models/ArticleData');
 const Pos = require("en-pos").Tag;
 const natural = require('natural')
 
@@ -12,10 +12,10 @@ mongoose.connect('mongodb://localhost/medium', function() {
 
 var tokenizer = new natural.WordTokenizer();
 
-Article.find({})
+Garticle.find({})
     .then((alldata) => {
         let obj = {}
-        for (let i=0; i<362; i++) {
+        for (let i=0; i<2539; i++) {
             let title = alldata[i].title
             let basedArray = tokenizer.tokenize(title)
             let poses = new Pos(basedArray).initial().smooth().tags;
@@ -25,10 +25,11 @@ Article.find({})
                 console.log(`added ${i} patterns to the doc`)
             }
         }
+        setTimeout(() => console.log("the pattern best for Life" + classifier.classify('Life')), 5000)
         classifier.train();
         console.log("training classifier")
-        setTimeout(() => console.log("the pattern best for Life" + classifier.classify('Life')), 5000)
-        classifier.save('pattern_classifier.json', function(err, classifier){
+
+        classifier.save('full_pattern_classifier.json', function(err, classifier){
             console.log("saved classifier")
         })
     })

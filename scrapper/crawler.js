@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const Barticle = require ('../models/ArticleData');
-const topStoresScrapper = require('./topStoriesScrapper');
+const Garticle = require ('../models/ArticleData');
+// const topStoresScrapper = require('./topStoriesScrapper');
 const mediumScrapper = require('./mediumScrapper');
+const staticScrapper = require('./staticScrapper')
 
 mongoose.connect('mongodb://localhost/medium', function() {
   console.log("DB connection established!!!");
@@ -9,7 +10,8 @@ mongoose.connect('mongodb://localhost/medium', function() {
 })
 // const createData = (data) => new Article(data).save()
 
-topStoresScrapper('https://topmediumstories.com/')
+// topStoresScrapper('https://topmediumstories.com/')
+staticScrapper()
     .then((posts) => {
         return Promise.all(
             posts.map((url => {
@@ -19,18 +21,19 @@ topStoresScrapper('https://topmediumstories.com/')
             )
     })
     .then((arrayedData) => {
+        console.log(arrayedData.length)
         for (let data of arrayedData) {
             console.log(data)
             if (data) {
                 const { url, title, readingTime, claps, tags} = data
-                let articleData = new Barticle({
+                let articleData = new Garticle({
                     url: url,
                     title: title,
                     readingTime: readingTime,
                     claps: claps,
                     tags: tags
                 })
-            articleData.save()
+            articleData.save().then(() => console.log('saved'))
         }}
     })  
     .catch((err) => {
