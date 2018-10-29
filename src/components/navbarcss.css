@@ -1,0 +1,101 @@
+a{
+    text-decoration: none
+}
+ul {
+    background: white;
+      list-style: none;
+      margin: 0;
+      padding-left: 0;
+  }
+  
+  li {
+      color: rgb(64, 87, 153);
+    background: white;
+      display: block;
+      float: left;
+      padding: 1rem;
+      position: relative;
+      text-decoration: none;
+    transition-duration: 0.5s;
+    /* border-bottom: 2px solid rgb(64, 87, 153) */
+
+  }
+    
+  li a {
+    color: rgb(64, 87, 153);
+    /* font-size: 30px; */
+    text-align:left
+
+  }
+  
+  li:hover,
+  li:focus-within {
+      /* background: red; */
+      cursor: pointer;
+      color: rgb(63, 162, 192)
+
+  }
+  
+  li:hover,
+  li:focus-within a {
+    outline: none;
+    background: rgb(225, 227, 228);
+  }
+  
+  ul li ul {
+      background: rgb(63, 162, 192);
+      visibility: hidden;
+    opacity: 0;
+    min-width: 5rem;
+      position: absolute;
+    transition: all 0.5s ease;
+    margin-top: 1rem;
+      left: 0;
+    display: none;
+  }
+  
+  ul li:hover > ul,
+  ul li:focus-within > ul,
+  ul li ul:hover,
+  ul li ul:focus {
+     visibility: visible;
+     opacity: 1;
+     display: block;
+     /* color: rgb(63, 162, 192) */
+
+  }
+  
+  ul li ul li {
+      clear: both;
+    width: 100%;
+    font-size: 20px;
+  }
+
+  nav {
+    background-color: white;
+    color: white;
+    padding: 30px;
+    height: 40px;
+    font-size: 30px
+  }
+  .navContainer {
+    display: flex;
+    justify-content: right;
+  }
+  nav li {
+    cursor: pointer;
+    color: rgb(64, 87, 153);
+    padding-right: 10px;
+    padding-left:30px
+  }
+  .navLink:hover {
+    color: rgb(63, 162, 192)
+  }
+  nav img {
+    text-align: left;
+    height: 87px;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+  }

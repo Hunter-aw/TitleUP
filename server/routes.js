@@ -32,6 +32,7 @@ router.get('/genTitle/:genre', async (req, res) => {
                                 null, async (err, classifier) => {
         let generatedArray = []
         let posPattern = await classifier.classify(req.params.genre).split(",")
+        console.log(req.params.genre)
         await Promise.all (posPattern.map(async (pos) => {
             console.log(pos)
             const wordData = await Garpattern.find({pos: pos, tag: req.params.genre})

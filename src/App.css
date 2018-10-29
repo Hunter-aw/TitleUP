@@ -1,36 +1,142 @@
-@import url('https://fonts.googleapis.com/css?family=Righteous');
+@import url('https://fonts.googleapis.com/css?family=Questrial|Varela+Round');
 body{
   background-color:rgb(255, 255, 255);
-  font-family: 'Righteous', cursive;
+  /* font-family: 'Varela Round', sans-serif; */
+  font-family: 'Questrial', sans-serif;
   text-align: center;
+  position: relative;
   
 }
-nav {
-  background-color: #07889b;
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-  height: 70px;
-  font-size: 40px
-}
+
 button{
-  background-color: #E37222;
-  color: white
+  background-color: rgb(64, 87, 153);
+  color: white;
+  cursor: pointer;
+  height: 50px;
+  width: 120px;
+  font-size: 25px;
+  border-radius: 5%
 }
-img{
-  height: 80px;
-  width: 80px;
-  position: absolute;
+.input{
+  width: 500px;
+  height: 40px;
+  margin-top: 50px
 }
 
 .tag{
   opacity: 1;
-  color: #07889b;
+  color: rgb(64, 87, 153);
 	animation-name: fadeInOpacity;
 	animation-iteration-count: 1;
 	animation-timing-function: ease-in;
-	animation-duration: 2s;
+  animation-duration: 2s;
+  font-size: 30px;
+  /* text-align: left */
+}
+.typeContainer {
+    padding: 3.5em 5.0em 3.0em 5.0em;
+    /* margin-bottom: 1.5em; */
+    display: flex;
+    justify-content: center;
+}
+.typeContainer2 {
+  display: flex;
+  justify-content: center;
+}
+.typewriter {
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 40px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end 5;
+}
+.typewriter2{
+  margin-left: 200px;
+  margin-right: 200px;
+  font-size: 30px;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid transparent; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .10em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end) 3.5s,
+    blink-caret .75s step-end infinite,
+    showMe 3.5s step-end
+}
+
+.buttonContainer {
+  margin-top: 5em;
+  display: flex;
+  justify-content: center
+}
+.productButton {
+  background-color: rgb(64, 87, 153);
+  color: white;
+  margin: 3em;
+  border-radius: 3%;
+  height: 80px;
+  width: 250px;
+  border: none;
+  font-size: 23px;
+  /* animation: name duration timing-function delay iteration-count direction fill-mode; */
+  transition: all 0.5s ease;
+  animation: 
+    showMeBackground 7.0s ease none 1 normal
+    /* fadeInOpacity 2.0s step-end, 7.0s */
+}
+.productButton:hover {
+  background-color: rgb(63, 162, 192)
+}
+.banner {
+  width: 100%;
+  height: 200px;
+  margin-top: 5em;
+  background-image: url('http://www.solutionmedical.gr/Designs/solutionmedical/tmp_images/trans280h.png');
+  background-repeat: no-repeat;
+  background-size: cover; 
+  position: absolute;
+  top: 600px
+}
+.sc-bdVaJa {
+  height: 400px;
+  width: 300px;
+  border-radius: 5%;
+}
+.donateButton {
+  height: 370px;
+  width: 500px;
+  border-radius: 5%;
+  font-size: 60px;
+  margin-top: 1.5em;
+  background-color: rgb(109, 197, 225);
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 80% }
+}
+@keyframes showMe {
+  from {color: white}
+  to {color: black;}
+}
+@keyframes showMeBackground {
+  0% {background-color: white}
+  80% {background-color: white}
+  100% {background-color: rgb(64, 87, 153)}
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(109, 197, 225); }
 }
 
 @keyframes fadeInOpacity {

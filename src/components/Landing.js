@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Tags from './Tags';
 import axios from 'axios';
+import OtherProjects from './OtherProducts'
+// import { BrowserRouter as Router, Link} from 'react-router-dom';
+
 
 class Landing extends Component {
     constructor() {
@@ -24,28 +26,14 @@ class Landing extends Component {
     render() {
         return(
             <div>
-                <nav>
-                    <span>
-                        <span>Title</span>
-                        <img src = 'https://lh3.ggpht.com/N6pVC84qnooEsOCJ15dijaOIfiZwBi1t0z6IDwczm_xKO1E_y9NGaogv5jhjQDx3YRIF=s180' alt = 'up'>
-                        </img>
-                    </span>
-                    <span>About Us</span>
-                    <span>Categories</span>
-                    <span>Donate</span>
-                </nav>
-                <div className = "logo">
-                    <span>Title</span>
-                    {/* <img src = 'https://lh3.ggpht.com/N6pVC84qnooEsOCJ15dijaOIfiZwBi1t0z6IDwczm_xKO1E_y9NGaogv5jhjQDx3YRIF=s180' alt = 'up'>
-                    </img> */}
+                <div class = "typeContainer">
+                <h1 className = 'typewriter'>Welcome to TitleUP: An AI powered tool for content creators.</h1>
                 </div>
-                <div className = "search">
-                    <input placeholder = 'level up your title today!'
-                            onChange = {this.updateTitle}>
-                    </input>
-                    <button onClick = {this.getTags}>TitleUP!</button>
+                <div class = "typeContainer2">
+                <h2 className ='typewriter2'>Browse our products below and level up your content today.</h2>
                 </div>
-                <Tags tags = {this.state.tags}/>
+
+                <OtherProjects/>
             </div>
         )
     }
