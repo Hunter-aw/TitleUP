@@ -31,6 +31,7 @@ button{
 	animation-timing-function: ease-in;
   animation-duration: 2s;
   font-size: 30px;
+  padding-top: 20px
   /* text-align: left */
 }
 .typeContainer {

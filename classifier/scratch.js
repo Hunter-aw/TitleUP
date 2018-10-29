@@ -10,26 +10,32 @@ mongoose.connect('mongodb://localhost/medium', function() {
 //   new Article({url: 'hunter.com', title: 'hunter', readingTime: 5, claps: 10000, tags: ['help', 'me']}).save()
 })
 
-Garticle.find({})
-    .then((allData) => {
-        let obj ={}
-        for (let data of allData) {
-            // console.log(data)
-            for (let tag of data.tags) {
-                if (obj[tag]) {
-                    obj[tag] ++
-                } else {
-                    obj[tag] = 1
-                }
-            } 
-            console.log(obj)
+// Garticle.find({})
+//     .then((allData) => {
+//         let obj ={}
+//         for (let data of allData) {
+//             // console.log(data)
+//             for (let tag of data.tags) {
+//                 if (obj[tag]) {
+//                     obj[tag] ++
+//                 } else {
+//                     obj[tag] = 1
+//                 }
+//             } 
+//             console.log(obj)
 
-        }
-        for (let tag in obj) {
-            let boop = new Tag({
-                tag: tag,
-                count: obj[tag]
-            })
-            boop.save()
-        }
-    })
+//         }
+//         for (let tag in obj) {
+//             let boop = new Tag({
+//                 tag: tag,
+//                 count: obj[tag]
+//             })
+//             boop.save()
+//         }
+//     })
+
+Tag.find({count: {$gte: 20}}).then((tags) => {
+    for(let tag of tags) {
+        console.log(tag.tag)
+    }
+})

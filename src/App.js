@@ -7,6 +7,8 @@ import './App.css';
 import Donate from './components/Donate'
 import TagPage from './components/TagPage/TagPage'
 import NgramPage from './components/NgramPage/NgramPage'
+import TitleGenPage from './components/TitlePage/TitleGenPage'
+import About from './components/About'
 const LoadingScreen = require('react-loading-screen');
 
 class App extends Component {
@@ -23,14 +25,17 @@ class App extends Component {
           <Route path = "/" exact render={() =>
             <Landing/>}> 
             </Route>
-          <Route path ="/about"></Route>
+          <Route path ="/about" exact render ={() => 
+            <About/>}></Route>
           <Route path ="/TagGenerator" exact render ={() => 
             <TagPage/>}> 
             </Route>
           <Route path ="/Ngrams" exact render ={() => 
             <NgramPage/>}>
             </Route>
-          <Route path ="/TitleGen"></Route>
+          <Route path ="/TitleGen" exact render ={() => 
+            <TitleGenPage/>}>
+            </Route>
           <Route path ="/donate" exact render ={() => 
             <Donate/>}> </Route>
           <div className = 'banner'>.</div>
