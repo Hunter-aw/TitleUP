@@ -22,7 +22,9 @@ button{
   height: 40px;
   margin-top: 50px
 }
-
+.aboutText{
+  margin: 50px
+}
 .tag{
   opacity: 1;
   color: rgb(64, 87, 153);

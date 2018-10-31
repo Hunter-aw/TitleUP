@@ -38,6 +38,7 @@ router.get('/genTitle/:genre', async (req, res) => {
             const wordData = await Garpattern.find({pos: pos, tag: req.params.genre})
                                     .sort({popularity: -1})
                 let wordDataArray = []
+                // console.log(wordDataArray)
                 wordData.map(async (data) => {
                     await wordDataArray.push(data.word*(Math.floor(data.score*100)))
                 })

@@ -15,7 +15,7 @@ class TagPage extends Component {
     }
     getTags = async() => {
         let query = this.state.searchTerm
-        const data = await axios.get(`http://localhost:8080/search/${query}`)
+        const data = await axios.get(`/search/${query}`)
         console.log(data)
         this.setState({
             tags: data.data

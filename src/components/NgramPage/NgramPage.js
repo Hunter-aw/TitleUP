@@ -15,7 +15,7 @@ class NgramPage extends Component {
     }
     getTags = async(e) => {
         let query = this.state.searchTerm
-        const data = await axios.get(`http://localhost:8080/ngrams/${query}`)
+        const data = await axios.get(`/ngrams/${query}`)
         console.log(data)
         this.setState({
             tags: data.data
