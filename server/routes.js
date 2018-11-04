@@ -6,7 +6,7 @@ const Pos = require("en-pos").Tag;
 
 const router = express.Router()
 
-mongoose.connect('mongodb://localhost/medium', function() {
+mongoose.connect(process.env.CONNECTION_STRING || 'mongodb://localhost/medium', function() {
   console.log("DB connection established!!!");
 })
 
