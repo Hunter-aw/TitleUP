@@ -15,7 +15,7 @@ router.get('/search/:query', (req, res) => {
     console.log("I'm here bitches")
     let tags = []
     let query = req.params.query
-    natural.BayesClassifier.load('/home/elhunto77/Repositories/TitleUP/title_up/classifier/fullClassifier.json',
+    natural.BayesClassifier.load('../classifier/fullClassifier.json',
                                  null, function(err, classifier) {
         let classifiedTags = classifier.getClassifications(query)
         for (let i=0; i<5; i++){
@@ -28,7 +28,7 @@ router.get('/search/:query', (req, res) => {
 
 router.get('/genTitle/:genre', async (req, res) => {
     console.log("I'm here biches")
-    natural.BayesClassifier.load('/home/elhunto77/Repositories/TitleUP/title_up/classifier/full_pattern_classifier.json',
+    natural.BayesClassifier.load('../classifier/full_pattern_classifier.json',
                                 null, async (err, classifier) => {
         let generatedArray = []
         let posPattern = await classifier.classify(req.params.genre).split(",")
@@ -57,7 +57,7 @@ router.get('/ngrams/:genre', (req, res) => {
     console.log("I'm here bitches")
     let ngrams = []
     let genre = req.params.genre
-    natural.BayesClassifier.load('/home/elhunto77/Repositories/TitleUP/title_up/classifier/ngramClassifier.json',
+    natural.BayesClassifier.load('../classifier/ngramClassifier.json',
                                  null, function(err, classifier) {
         let classifiedNgrams = classifier.getClassifications(genre)
         for (let i=0; i<5; i++){
