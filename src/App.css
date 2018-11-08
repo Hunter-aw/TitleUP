@@ -9,13 +9,15 @@ body{
 }
 
 button{
-  background-color: rgb(64, 87, 153);
+  background-color: rgba(64, 88, 153, 0.931);
   color: white;
   cursor: pointer;
-  height: 50px;
+  height: 55px;
   width: 120px;
   font-size: 25px;
-  border-radius: 5%
+  border-radius: 5%;
+  padding-bottom: 7px;
+  margin-left: 10px
 }
 .input{
   width: 500px;
@@ -23,7 +25,17 @@ button{
   margin-top: 50px
 }
 .aboutText{
-  margin: 50px
+  margin: 50px;
+  font-weight: 100;
+
+}
+.about1{
+  text-align: left;
+  margin-left: 20rem
+}
+.about2{
+  text-align: right;
+  margin-right: 20rem
 }
 .tag{
   opacity: 1;
@@ -54,9 +66,9 @@ button{
   border-right: .15em solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .10em; /* Adjust as needed */
+  letter-spacing: .08em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(40, end),
+    typing 3.2s steps(40, end),
     blink-caret .75s step-end 5;
 }
 .typewriter2{
@@ -67,10 +79,10 @@ button{
   border-right: .15em solid transparent; /* The typwriter cursor */
   white-space: nowrap; /* Keeps the content on a single line */
   margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .10em; /* Adjust as needed */
+  letter-spacing: .08em; /* Adjust as needed */
   animation: 
-    typing 3.5s steps(40, end) 3.5s,
-    blink-caret .75s step-end infinite,
+    typingSub 3.2s steps(40, end) 3.5s,
+    blink-caret .75s step-end 3.5s infinite,
     showMe 3.5s step-end
 }
 
@@ -80,7 +92,7 @@ button{
   justify-content: center
 }
 .productButton {
-  background-color: rgb(64, 87, 153);
+  background-color: rgba(64, 88, 153, 0.918);
   color: white;
   margin: 3em;
   border-radius: 3%;
@@ -120,11 +132,27 @@ button{
   margin-top: 1.5em;
   background-color: rgb(109, 197, 225);
 }
+.beta {
+  font-size: 17px
+}
 
+.subtitle{
+  font-size: 24px
+}
+
+.headshot{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%
+}
 /* The typing effect */
 @keyframes typing {
   from { width: 0 }
   to { width: 80% }
+}
+@keyframes typingSub {
+  from { width: 0 }
+  to { width: 60%}
 }
 @keyframes showMe {
   from {color: white}

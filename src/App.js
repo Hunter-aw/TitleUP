@@ -8,7 +8,7 @@ import Donate from './components/Donate'
 import TagPage from './components/TagPage/TagPage'
 import NgramPage from './components/NgramPage/NgramPage'
 import TitleGenPage from './components/TitlePage/TitleGenPage'
-import About from './components/About'
+import About from './About'
 const LoadingScreen = require('react-loading-screen');
 
 class App extends Component {

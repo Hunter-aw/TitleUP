@@ -13,7 +13,7 @@ class OtherProjects extends Component {
                     </button></Link>
                 <Link to='TitleGen'>
                     <button className="productButton">Title Generator 
-                        <span className='beta'>Beta</span>
+                        <span className='beta'> (Beta)</span>
                     </button></Link>
             </div>
         )

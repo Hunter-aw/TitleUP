@@ -15,7 +15,7 @@ class TitleGenPage extends Component {
     }
     getTags = async(e) => {
         let query = this.state.searchTerm
-        const data = await axios.get(`/genTitle/${query}`)
+        const data = await axios.get(`genTitle/${query}`)
         console.log(data)
         this.setState({
             tags: data.data
@@ -24,10 +24,11 @@ class TitleGenPage extends Component {
     render() {
         return(    
             <div>            
-                <h1>New Title Generator</h1><span>Beta</span>
+                <h1>New Title Generator<span className='beta'> Beta</span></h1>
                 <br></br>
                 <h2>Find your story</h2>
-                <h2>TitleUP's Machine studdied the gramatical patterns of thousands of articles to generate new titles that have yet to be written</h2> 
+                <p className ='subtitle'>TitleUP's Machine studdied the gramatical patterns of thousands of articles to generate new titles that have yet to be written
+                <br/> Enter a <strong>genre</strong> bellow and we'll genereate a brand new article title for you to write!</p>
                 <div className = "search">
                 <input placeholder = 'Enter a Genre here!'
                     onChange = {this.updateTitle}

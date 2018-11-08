@@ -15,7 +15,7 @@ class NgramPage extends Component {
     }
     getTags = async(e) => {
         let query = this.state.searchTerm
-        const data = await axios.get(`/ngrams/${query}`)
+        const data = await axios.get(`ngrams/${query}`)
         console.log(data)
         this.setState({
             tags: data.data
@@ -27,7 +27,7 @@ class NgramPage extends Component {
                 <h1>Key Terms and Phrases</h1>
                 <br></br>
                 <h2>What should you write next?</h2>
-                <h2>Here at TitleUP, we know what works. Tell us a Genre and we'll tell you it's top words or phrases for inspiration</h2> 
+                <p className ='subtitle'>Here at TitleUP, we know what works. Tell us a <strong>genre</strong> and we'll tell you top words or phrases in the genre for inspiration</p> 
                 <div className = "search">
                 <input placeholder = 'Enter a Genre here!'
                     onChange = {this.updateTitle}

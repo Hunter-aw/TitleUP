@@ -26,10 +26,10 @@ class Landing extends Component {
     render() {
         return(
             <div>
-                <div class = "typeContainer">
+                <div className = "typeContainer">
                 <h1 className = 'typewriter'>Welcome to TitleUP: An AI powered tool for content creators.</h1>
                 </div>
-                <div class = "typeContainer2">
+                <div className = "typeContainer2">
                 <h2 className ='typewriter2'>Browse our products below and level up your content today.</h2>
                 </div>
 

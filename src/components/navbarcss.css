@@ -32,18 +32,22 @@ ul {
   li:focus-within {
       /* background: red; */
       cursor: pointer;
-      color: rgb(63, 162, 192)
+      /* color: rgb(63, 162, 192) */
 
   }
   
   li:hover,
-  li:focus-within a {
+  li:focus-within {
     outline: none;
     background: rgb(225, 227, 228);
   }
+
+  li.active{
+    background:  rgb(225, 227, 228);
+  }
   
   ul li ul {
-      background: rgb(63, 162, 192);
+      /* background: rgb(63, 162, 192); */
       visibility: hidden;
     opacity: 0;
     min-width: 5rem;
@@ -69,6 +73,7 @@ ul {
       clear: both;
     width: 100%;
     font-size: 20px;
+    text-align: left;
   }
 
   nav {
@@ -76,20 +81,20 @@ ul {
     color: white;
     padding: 30px;
     height: 40px;
-    font-size: 30px
+    font-size: 30px;
   }
   .navContainer {
     display: flex;
-    justify-content: right;
+    justify-content: flex-end;
   }
   nav li {
     cursor: pointer;
     color: rgb(64, 87, 153);
-    padding-right: 10px;
-    padding-left:30px
+    padding-right: 20px;
+    padding-left: 20px
   }
   .navLink:hover {
-    color: rgb(63, 162, 192)
+    /* color: rgb(63, 162, 192) */
   }
   nav img {
     text-align: left;
