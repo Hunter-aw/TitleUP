@@ -15,7 +15,7 @@ class TitleGenPage extends Component {
     }
     getTags = async(e) => {
         let query = this.state.searchTerm
-        const data = await axios.get(`genTitle/${query}`)
+        const data = await axios.get(`/genTitle/${query}`)
         console.log(data)
         this.setState({
             tags: data.data
