@@ -13,7 +13,7 @@ class AboutUs extends Component {
                 <h2>Explore. Learn. Create. TitleUp Today.
                 </h2>
                 </div>
-                <img className = 'headshot' src={headshot} alt='Founder, Hunter A Weinsheink'></img>
+                <img className = 'headshot' src={headshot} alt='Founder, Hunter A. Weinsheink'></img>
                 <h4>TitleUP Founder and CEO, 
                 Hunter Weinsheink</h4>
             </div>

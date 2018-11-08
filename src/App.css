@@ -31,11 +31,15 @@ button{
 }
 .about1{
   text-align: left;
-  margin-left: 20rem
+  margin-left: 20rem;
+  font-weight: 100;
+
 }
 .about2{
   text-align: right;
-  margin-right: 20rem
+  margin-right: 20rem;
+  font-weight: 100;
+
 }
 .tag{
   opacity: 1;
